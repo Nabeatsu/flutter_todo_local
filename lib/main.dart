@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'todo.dart';
+import 'todo_item.dart';
 
 void main() => runApp(MyApp());
 
@@ -56,14 +57,30 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         backgroundColor: Colors.black87,
       ),
-      body: Container(
-        child: ListView.builder(
-          itemCount: _todoList.length,
-          itemBuilder: (context, int index) {
-            return Text('${_todoList[index].name}');
-          },
+      body: SafeArea(
+        child: Stack(
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: _todoList.length,
+                    itemBuilder: (context, int index) {
+                      return Padding(
+                        padding: EdgeInsets.all(5),
+                        child: ToDoItem(
+                          _todoList[index],
+                        ),
+                      );
+                    },
+                  ),
+                )
+              ],
+            )
+          ],
         ),
       ),
+      backgroundColor: Colors.tealAccent,
     );
   }
 
@@ -71,7 +88,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     _setUp();
-    print('hogehoge');
   }
 
   void _setUp() async {

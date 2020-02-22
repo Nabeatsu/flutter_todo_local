@@ -2,7 +2,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
 
-// デー5あベース毎にこのクラスを継承したProviderを実装する
+// データベース毎にこのクラスを継承したProviderを実装する
 abstract class DatabaseProvider {
   Database _instance;
   String get databaseName;
