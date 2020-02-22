@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -53,35 +53,33 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        backgroundColor: Colors.black87,
-      ),
-      body: SafeArea(
-        child: Stack(
-          children: <Widget>[
-            Column(
-              children: <Widget>[
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: _todoList.length,
-                    itemBuilder: (context, int index) {
-                      return Padding(
-                        padding: EdgeInsets.all(5),
-                        child: ToDoItem(
-                          _todoList[index],
-                        ),
-                      );
-                    },
-                  ),
-                )
-              ],
-            )
-          ],
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
-      ),
-      backgroundColor: Colors.tealAccent,
-    );
+        body: SafeArea(
+          child: Stack(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: _todoList.length,
+                      itemBuilder: (context, int index) {
+                        return Padding(
+                          padding: EdgeInsets.all(5),
+                          child: ToDoItem(
+                            _todoList[index],
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+        backgroundColor: Colors.indigo[50]);
   }
 
   @override

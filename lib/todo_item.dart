@@ -41,10 +41,9 @@ class _ToDoItemState extends State<ToDoItem> {
               ),
             ),
           ),
-          color: Colors.tealAccent,
         ),
       ),
-      color: Colors.white70,
+      color: Colors.indigo[50],
     );
   }
 }
